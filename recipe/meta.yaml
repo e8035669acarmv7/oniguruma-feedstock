@@ -10,7 +10,7 @@ source:
   md5: d08f10ea5c94919780e6b7bed1ef9830
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 test:

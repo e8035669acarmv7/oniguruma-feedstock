@@ -5,7 +5,7 @@ Home: https://github.com/kkos/oniguruma
 
 Package license: BSD 2-Clause
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: A regular expression library.
 
@@ -69,9 +69,15 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/oniguruma-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/oniguruma-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/oniguruma-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/oniguruma-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/oniguruma-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/oniguruma-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/oniguruma/badges/version.svg)](https://anaconda.org/conda-forge/oniguruma)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/oniguruma/badges/downloads.svg)](https://anaconda.org/conda-forge/oniguruma)
 
 
 Updating oniguruma-feedstock

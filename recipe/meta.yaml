@@ -18,11 +18,11 @@ test:
     - exit $(test -f ${PREFIX}/lib/libonig.a)          # [not win]
 
 about:
-    home: https://github.com/kkos/oniguruma
-    license: BSD 2-Clause
-    summary: A regular expression library.
+  home: https://github.com/kkos/oniguruma
+  license: BSD 2-Clause
+  summary: A regular expression library.
 
 extra:
-    recipe-maintainers:
-        - jakirkham
-        - kkos
+  recipe-maintainers:
+    - jakirkham
+    - kkos

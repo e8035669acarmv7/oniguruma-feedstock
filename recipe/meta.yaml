@@ -10,7 +10,7 @@ source:
   sha256: 0cd75738a938faff4a48c403fb171e128eb9bbd396621237716dbe98c3ecd1af
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 test:
@@ -20,6 +20,7 @@ test:
 about:
   home: https://github.com/kkos/oniguruma
   license: BSD 2-Clause
+  license_file: COPYING
   summary: A regular expression library.
 
 extra:

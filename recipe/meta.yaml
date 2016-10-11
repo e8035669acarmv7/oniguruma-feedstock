@@ -15,7 +15,29 @@ build:
 
 test:
   commands:
-    - exit $(test -f ${PREFIX}/lib/libonig.a)          # [not win]
+    # Check for headers.
+    {% set headers = [
+             "oniggnu",
+             "onigposix",
+             "oniguruma"
+    ] %}
+    {% for each_header in headers %}
+    - test -f "${PREFIX}/include/{{ each_header }}.h"
+    {% endfor %}
+
+    # Check for libraries.
+    - test -f "${PREFIX}/lib/libonig.a"
+    - test -f "${PREFIX}/lib/libonig.so"     # [linux]
+    - test -f "${PREFIX}/lib/libonig.dylib"  # [osx]
+
+    # Check for libtool file.
+    - test -f "${PREFIX}/lib/libonig.la"
+
+    # Check for pkg-config file.
+    - test -f "${PREFIX}/lib/pkgconfig/oniguruma.pc"
+
+    # Check for config executable.
+    - onig-config --version
 
 about:
   home: https://github.com/kkos/oniguruma

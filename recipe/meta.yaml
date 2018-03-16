@@ -18,7 +18,9 @@ build:
 
 requirements:
   build:
-    - python  # [win]
+    - python      # [win]
+    - cmake       # [win]
+    - msinttypes  # [win]
 
 test:
   requires:

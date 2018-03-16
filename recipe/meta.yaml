@@ -34,13 +34,16 @@ test:
              "oniguruma"
     ] %}
     {% for each_header in headers %}
-    - test -f "${PREFIX}/include/{{ each_header }}.h"  # [unix]
+    - test -f "${PREFIX}/include/{{ each_header }}.h"          # [unix]
+    - if not exist "%LIBRARY_INC%\{{ each_header }}.h" exit 1  # [win]
     {% endfor %}
 
     # Check for libraries.
     - test -f "${PREFIX}/lib/libonig.a"                # [unix]
     - test -f "${PREFIX}/lib/libonig.so"               # [linux]
     - test -f "${PREFIX}/lib/libonig.dylib"            # [osx]
+    - if not exist "%LIBRARY_BIN%\onig.dll" exit 1     # [win]
+    - if not exist "%LIBRARY_LIB%\onig.lib" exit 1     # [win]
 
     # Check for libtool file.
     - test -f "${PREFIX}/lib/libonig.la"               # [unix]

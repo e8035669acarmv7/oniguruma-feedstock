@@ -22,22 +22,22 @@ test:
              "oniguruma"
     ] %}
     {% for each_header in headers %}
-    - test -f "${PREFIX}/include/{{ each_header }}.h"
+    - test -f "${PREFIX}/include/{{ each_header }}.h"  # [unix]
     {% endfor %}
 
     # Check for libraries.
-    - test -f "${PREFIX}/lib/libonig.a"
-    - test -f "${PREFIX}/lib/libonig.so"     # [linux]
-    - test -f "${PREFIX}/lib/libonig.dylib"  # [osx]
+    - test -f "${PREFIX}/lib/libonig.a"                # [unix]
+    - test -f "${PREFIX}/lib/libonig.so"               # [linux]
+    - test -f "${PREFIX}/lib/libonig.dylib"            # [osx]
 
     # Check for libtool file.
-    - test -f "${PREFIX}/lib/libonig.la"
+    - test -f "${PREFIX}/lib/libonig.la"               # [unix]
 
     # Check for pkg-config file.
-    - test -f "${PREFIX}/lib/pkgconfig/oniguruma.pc"
+    - test -f "${PREFIX}/lib/pkgconfig/oniguruma.pc"   # [unix]
 
     # Check for config executable.
-    - onig-config --version
+    - onig-config --version                            # [unix]
 
 about:
   home: https://github.com/kkos/oniguruma

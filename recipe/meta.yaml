@@ -11,9 +11,21 @@ source:
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: True  # [win and py36]
+  features:
+    - vc9     # [win and py27]
+    - vc14    # [win and (py35 or py36)]
+
+requirements:
+  build:
+    - python      # [win]
+    - cmake       # [win]
+    - msinttypes  # [win]
 
 test:
+  requires:
+    - python {{ os.environ.get('PY_VER', '') + '*' }}  # [win]
+
   commands:
     # Check for headers.
     {% set headers = [
@@ -22,22 +34,25 @@ test:
              "oniguruma"
     ] %}
     {% for each_header in headers %}
-    - test -f "${PREFIX}/include/{{ each_header }}.h"
+    - test -f "${PREFIX}/include/{{ each_header }}.h"          # [unix]
+    - if not exist "%LIBRARY_INC%\{{ each_header }}.h" exit 1  # [win]
     {% endfor %}
 
     # Check for libraries.
-    - test -f "${PREFIX}/lib/libonig.a"
-    - test -f "${PREFIX}/lib/libonig.so"     # [linux]
-    - test -f "${PREFIX}/lib/libonig.dylib"  # [osx]
+    - test -f "${PREFIX}/lib/libonig.a"                # [unix]
+    - test -f "${PREFIX}/lib/libonig.so"               # [linux]
+    - test -f "${PREFIX}/lib/libonig.dylib"            # [osx]
+    - if not exist "%LIBRARY_BIN%\onig.dll" exit 1     # [win]
+    - if not exist "%LIBRARY_LIB%\onig.lib" exit 1     # [win]
 
     # Check for libtool file.
-    - test -f "${PREFIX}/lib/libonig.la"
+    - test -f "${PREFIX}/lib/libonig.la"               # [unix]
 
     # Check for pkg-config file.
-    - test -f "${PREFIX}/lib/pkgconfig/oniguruma.pc"
+    - test -f "${PREFIX}/lib/pkgconfig/oniguruma.pc"   # [unix]
 
     # Check for config executable.
-    - onig-config --version
+    - onig-config --version                            # [unix]
 
 about:
   home: https://github.com/kkos/oniguruma

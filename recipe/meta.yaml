@@ -20,6 +20,7 @@ requirements:
   build:
     - python      # [win]
     - cmake       # [win]
+  host:
     - msinttypes  # [win]
 
 test:

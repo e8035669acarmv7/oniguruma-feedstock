@@ -11,22 +11,15 @@ source:
 
 build:
   number: 0
-  skip: True  # [win and py36]
-  features:
-    - vc9     # [win and py27]
-    - vc14    # [win and (py35 or py36)]
 
 requirements:
   build:
-    - python      # [win]
-    - cmake       # [win]
+    - {{ compiler("c") }}
+    - cmake                # [win]
   host:
-    - msinttypes  # [win]
+    - msinttypes           # [win]
 
 test:
-  requires:
-    - python {{ os.environ.get('PY_VER', '') + '*' }}  # [win]
-
   commands:
     # Check for headers.
     {% set headers = [

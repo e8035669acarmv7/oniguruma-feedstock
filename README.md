@@ -14,14 +14,16 @@ Summary: A regular expression library.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/oniguruma-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/oniguruma-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/oniguruma-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/oniguruma-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/oniguruma-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/oniguruma-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/oniguruma-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/oniguruma-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/oniguruma-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/oniguruma-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/oniguruma-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/oniguruma-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/oniguruma/badges/version.svg)](https://anaconda.org/conda-forge/oniguruma)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/oniguruma/badges/downloads.svg)](https://anaconda.org/conda-forge/oniguruma)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-oniguruma-green.svg)](https://anaconda.org/conda-forge/oniguruma) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/oniguruma.svg)](https://anaconda.org/conda-forge/oniguruma) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/oniguruma.svg)](https://anaconda.org/conda-forge/oniguruma) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/oniguruma.svg)](https://anaconda.org/conda-forge/oniguruma) |
 
 Installing oniguruma
 ====================

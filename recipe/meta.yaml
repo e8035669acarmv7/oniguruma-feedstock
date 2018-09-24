@@ -39,9 +39,6 @@ test:
     - if not exist "%LIBRARY_BIN%\onig.dll" exit 1     # [win]
     - if not exist "%LIBRARY_LIB%\onig.lib" exit 1     # [win]
 
-    # Check for libtool file.
-    - test -f "${PREFIX}/lib/libonig.la"               # [unix]
-
     # Check for pkg-config file.
     - test -f "${PREFIX}/lib/pkgconfig/oniguruma.pc"   # [unix]
 

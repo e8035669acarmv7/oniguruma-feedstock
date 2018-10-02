@@ -1,4 +1,4 @@
-{% set version = "6.8.2" %}
+{% set version = "6.9.0" %}
 
 package:
   name: oniguruma
@@ -7,10 +7,10 @@ package:
 source:
   fn: onig-{{ version }}.tar.gz
   url: https://github.com/kkos/oniguruma/releases/download/v{{ version }}/onig-{{ version }}.tar.gz
-  sha256: adeada5f6b54c2a6f58ff021831a01b18a62b55ea9935e972e36ebb19e7c4903
+  sha256: 91bfb25e050ce3c301483204dd3f0d03a7c05472e20d48fe227a383d4534e7c9
 
 build:
-  number: 1001
+  number: 1000
 
 requirements:
   build:
@@ -38,9 +38,6 @@ test:
     - test -f "${PREFIX}/lib/libonig.dylib"            # [osx]
     - if not exist "%LIBRARY_BIN%\onig.dll" exit 1     # [win]
     - if not exist "%LIBRARY_LIB%\onig.lib" exit 1     # [win]
-
-    # Check for libtool file.
-    - test -f "${PREFIX}/lib/libonig.la"               # [unix]
 
     # Check for pkg-config file.
     - test -f "${PREFIX}/lib/pkgconfig/oniguruma.pc"   # [unix]

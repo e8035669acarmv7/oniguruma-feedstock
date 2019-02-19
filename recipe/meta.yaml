@@ -8,6 +8,13 @@ source:
   fn: onig-{{ version }}.tar.gz
   url: https://github.com/kkos/oniguruma/releases/download/v{{ version }}/onig-{{ version }}.tar.gz
   sha256: c7c3feb7be45a5cc9f2dec239b4a317a422e6ffea299cf91ffab1b926633ea12
+  patches:
+    #######################################################
+    # Fix Windows VS 2008 build issue.                    #
+    #                                                     #
+    # xref: https://github.com/kkos/oniguruma/issues/127  #
+    #######################################################
+    - fix_vs2008_b054054.patch
 
 build:
   number: 1000

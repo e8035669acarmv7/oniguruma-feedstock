@@ -1,0 +1,29 @@
+From b054054866bf8df0da826830f1caa244f4806a82 Mon Sep 17 00:00:00 2001
+From: "K.Kosako" <kkosako0@gmail.com>
+Date: Wed, 2 Jan 2019 21:30:33 +0900
+Subject: [PATCH] fix #127: Windows VS 2008 build errors
+
+---
+ src/regparse.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git src/regparse.c src/regparse.c
+index 90c3749..1378eea 100644
+--- src/regparse.c
++++ src/regparse.c
+@@ -1565,9 +1565,13 @@ onig_set_callout_of_name(OnigEncoding enc, OnigCalloutType callout_type,
+   }
+   for (i = arg_num - opt_arg_num, j = 0; i < arg_num; i++, j++) {
+     if (fe->arg_types[i] == ONIG_TYPE_STRING) {
++      OnigValue* val;
++      UChar* ds;
++
+       if (IS_NULL(opt_defaults)) return ONIGERR_INVALID_ARGUMENT;
+-      OnigValue* val = opt_defaults + j;
+-      UChar* ds = onigenc_strdup(enc, val->s.start, val->s.end);
++
++      val = opt_defaults + j;
++      ds = onigenc_strdup(enc, val->s.start, val->s.end);
+       CHECK_NULL_RETURN_MEMERR(ds);
+ 
+       fe->opt_defaults[i].s.start = ds;

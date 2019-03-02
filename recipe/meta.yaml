@@ -17,7 +17,7 @@ source:
     - fix_vs2008_b054054.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=oniguruma 
     - {{ pin_subpackage('oniguruma', max_pin='x.x') }}

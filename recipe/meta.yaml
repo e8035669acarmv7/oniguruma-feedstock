@@ -1,4 +1,4 @@
-{% set version = "6.9.1" %}
+{% set version = "6.9.2" %}
 
 package:
   name: oniguruma
@@ -7,17 +7,10 @@ package:
 source:
   fn: onig-{{ version }}.tar.gz
   url: https://github.com/kkos/oniguruma/releases/download/v{{ version }}/onig-{{ version }}.tar.gz
-  sha256: c7c3feb7be45a5cc9f2dec239b4a317a422e6ffea299cf91ffab1b926633ea12
-  patches:
-    #######################################################
-    # Fix Windows VS 2008 build issue.                    #
-    #                                                     #
-    # xref: https://github.com/kkos/oniguruma/issues/127  #
-    #######################################################
-    - fix_vs2008_b054054.patch
+  sha256: db7addb196ecb34e9f38d8f9c97b29a3e962c0e17ea9636127b3e3c42f24976a
 
 build:
-  number: 1
+  number: 0
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=oniguruma 
     - {{ pin_subpackage('oniguruma', max_pin='x.x') }}

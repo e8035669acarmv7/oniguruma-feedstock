@@ -4,7 +4,7 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 chmod +x configure
 
-./configure --disable-maintainer-mode --prefix=$PREFIX
+./configure --disable-maintainer-mode --enable-posix-api=yes --prefix=$PREFIX
 
 make -j${CPU_COUNT}
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
